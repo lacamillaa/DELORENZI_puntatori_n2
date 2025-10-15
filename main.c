@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char* duplicate(char* s) {
     int i = 0;
@@ -12,9 +13,17 @@ char* duplicate(char* s) {
         dbl[j] = s[j];
     }
     dbl[i] = 0;
-    free(s);
     return dbl;
 }
 
 int main(void) {
+    char* s = "Hello World";
+    char* dbl = duplicate(s);
+    for (int i = 0; i < strlen(dbl); i++) {
+        printf("%c", dbl[i]);
+    }
+    printf("\n");
+    free(dbl);
+    dbl = NULL;
+    return 0;
 }
